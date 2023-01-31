@@ -40,6 +40,6 @@ In the backend, I updated the send API with first recovering the address from th
 
 Only thing I am missing is validating the recipient eth address validity. If I type any random invalid address, i cannot see the amount because there is no private key for that invalid eth address. Hoping to find the solution for this in future tutorials.
 
-Peace, love and Web3!!!!!
+<b>Peace, Love and Web3!!!!!</b>
 
 

@@ -29,3 +29,17 @@ The server folder contains a node.js server using [express](https://expressjs.co
 The application should connect to the default server port (3042) automatically! 
 
 _Hint_ - Use [nodemon](https://www.npmjs.com/package/nodemon) instead of `node` to automatically restart the server on any changes.
+
+### My Solution
+
+I have created a script which will generate a randon pair of public-private keys in the server/scripts folder. Using this, I've generated five key pair to act as 5 different users mentioned in server/keys.txt file.
+
+After the video instructions, I updated the Transfer component with private key of the sender. I calculated the digital signature using this private key for the message containing sender address, recipient address and amount. I added this hash and the recovery bit from the sign in the message json and send as a request body to the server.
+
+In the backend, I updated the send API with first recovering the address from the secp.recoverPublicKey() function and then matched this with the sender address received in the req body, if it is mismatched it will send 400 error back to client. This will provide basic authentication while transfering the funds.
+
+Only thing I am missing is validating the recipient eth address validity. If I type any random invalid address, i cannot see the amount because there is no private key for that invalid eth address. Hoping to find the solution for this in future tutorials.
+
+Peace, love and Web3!!!!!
+
+
